@@ -11,7 +11,7 @@ cat ./.______________tmp | while read line
 do
   if test "${line}" = "${output}"; then
     echo -e "\033[31mERROR : A file with a name same to the one you specified in the output file already exists.\033[00m"
-    rm tmp.txt
+    rm .______________tmp.txt
     exit 1
   fi
 done
