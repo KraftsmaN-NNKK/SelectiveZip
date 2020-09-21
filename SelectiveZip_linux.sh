@@ -6,8 +6,8 @@ cd ${folder}
 
 read -p "enter output file name : " output
 
-ls -1 > tmp.txt
-cat ./tmp.txt | while read line
+ls -1 > .______________tmp
+cat ./.______________tmp | while read line
 do
   if test "${line}" = "${output}"; then
     echo -e "\033[31mERROR : A file with a name same to the one you specified in the output file already exists.\033[00m"
