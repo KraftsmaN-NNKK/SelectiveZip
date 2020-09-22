@@ -19,6 +19,6 @@ done
 find .ignore
 
 rm .______________tmp
-rsync -a --exclude-from .ignore --exclude '.ignore' ${folder}/* ${folder}/${output}
+rsync -a --exclude-from .ignore --exclude '.ignore' ${folder}/* ${folder}/${output}/
 zip  ${output}.zip -r ${output}/*
 rm -rf ${output}
