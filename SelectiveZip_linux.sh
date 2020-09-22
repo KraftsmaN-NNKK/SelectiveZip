@@ -6,7 +6,7 @@ cd ${folder}
 
 read -p "enter output file name : " output
 
-ls -1 > .______________tmp
+ls -1 -a > .______________tmp
 cat ./.______________tmp | while read line
 do
   if test "${line}" = "${output}"; then
@@ -16,6 +16,9 @@ do
   fi
 done
 
+find .ignore
+
+rm .______________tmp
 rsync -a --exclude-from .ignore --exclude '.ignore' ${folder}/* ${folder}/${output}
 zip  ${output}.zip -r ${output}/*
 rm -rf ${output}
