@@ -27,7 +27,7 @@ while line:
     if line[:1] == "/":
         os.rmtree("./" + output_name + line)
     
-    else
+    else:
         os.remove("./" + output_name + line)
 
     line = open(".ignore", "r").readline()
