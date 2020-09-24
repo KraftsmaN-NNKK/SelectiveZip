@@ -24,6 +24,9 @@ os.remove("./" + output_name + "/" + ".ignore")
 line = open(".ignore", "r").readline()
 while line:
     line = line.strip()
+    if line[:1] == "/":
+        os.rmtree("./" + output_name + line)
+
     os.remove("./" + output_name + line)
     line = open(".ignore", "r").readline()
 
