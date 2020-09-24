@@ -22,15 +22,17 @@ shutil.copytree("./", "./" + output_name)
 os.remove("./" + output_name + "/" + ".ignore")
 
 line = open(".ignore", "r").readline()
-while line:
+for line in open(".ignore", "r"):
     line = line.strip()
-    if line[:1] == "/":
-        os.rmtree("./" + output_name + line)
+    if line[-1:] == "/":
+        l = len(line) - 1
+        line = line[0:l]
+        shutil.rmtree("./" + output_name + "/" + line)
     
     else:
-        os.remove("./" + output_name + line)
-
+        os.remove("./" + output_name + "/" + line)
     line = open(".ignore", "r").readline()
+open(".ignore", "r").close
 
 shutil.make_archive('./' + output_name, 'zip', root_dir= './' + output_name)
 
