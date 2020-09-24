@@ -26,8 +26,10 @@ while line:
     line = line.strip()
     if line[:1] == "/":
         os.rmtree("./" + output_name + line)
+    
+    else
+        os.remove("./" + output_name + line)
 
-    os.remove("./" + output_name + line)
     line = open(".ignore", "r").readline()
 
 shutil.make_archive('./' + output_name, 'zip', root_dir= './' + output_name)
